@@ -8,6 +8,10 @@
 
 #import "HomeViewController.h"
 
+#import "VideoCell.h"
+
+#import "HomeDetail_1ViewController.h"
+
 @interface HomeViewController ()
 
 @end
@@ -28,6 +32,13 @@
     [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
     [segmentedControl setTag:1];
     [self.view addSubview:segmentedControl];
+    
+    
+//    _tableView.backgroundColor = [UIColor grayColor];
+    
+    _tableView.delegate = self;
+    
+    _tableView.dataSource = self;
 
     
 }
@@ -40,6 +51,73 @@
     
     [self.frostedViewController presentMenuViewController];
 }
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 4;
+}
+
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 140;
+}
+
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+//    static NSString *identifier = @"Cell";
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+//    
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+//    }
+//    return cell;
+    
+    VideoCell *cell = (VideoCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    if (!cell) {
+        cell = [[VideoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    
+    cell.praiseLabel.text = @"29";
+    cell.videoImageView.image = [UIImage imageNamed:@"water"];
+    cell.titleLabel.text = @"水是生命之源";
+    cell.iconView.image = [UIImage imageNamed:@"user"];
+    
+    
+    [cell.iconView.layer setCornerRadius:CGRectGetHeight([cell.iconView bounds]) / 2];
+    cell.iconView.layer.masksToBounds = YES;
+    
+//    然后再给图层添加一个有色的边框，类似qq空间头像那样
+//    cell.iconView.layer.borderWidth = 5;
+//    cell.iconView.layer.borderColor = [[UIColor whiteColor] CGColor];
+//    cell.iconView.layer.contents = (id)[[UIImage imageNamed:@"user"] CGImage];
+    
+    
+    
+    return cell;
+    
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    
+    HomeDetail_1ViewController *detail_1ViewController = [[HomeDetail_1ViewController alloc] init];
+    
+    [[self navigationController] pushViewController:detail_1ViewController animated:YES];
+
+    
+    
+}
+
+// 删掉头视图
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)sectionIndex {
+//    
+//
+//}
 
 /*
 #pragma mark - Navigation

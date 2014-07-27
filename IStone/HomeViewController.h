@@ -15,7 +15,9 @@
 
 #import "HMSegmentedControl.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 -(IBAction)showMenu;
 

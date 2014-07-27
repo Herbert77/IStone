@@ -12,7 +12,7 @@
 
 #import "REFrostedViewController.h"
 
-@interface FriendsViewController : UIViewController
+@interface FriendsViewController : UITableViewController
 
 -(IBAction)showMenu;
 
