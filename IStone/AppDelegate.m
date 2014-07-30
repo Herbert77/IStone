@@ -11,7 +11,7 @@
 // SystemInfoViewController 实例 为系统消息模块VC . 在 MenuViewController.m 中，可以实现由菜单中的 cell ，跳转到对应的主页， 某些主页未被添加，如有需要，自行添加.
 // 该工程使用了 storyboard， 操作 storyboard 之前，请务必参照 http://blog.csdn.net/chang6520/article/details/7945845 storyboard 解析（一）、（二）.
 
-
+//test
 
 #import "AppDelegate.h"
 
