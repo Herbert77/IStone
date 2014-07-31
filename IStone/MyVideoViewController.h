@@ -10,7 +10,7 @@
 
 #import "REFrostedViewController.h"
 
-@interface MyVideoViewController : UIViewController
+@interface MyVideoViewController : UIViewController<UITabBarDelegate,UITableViewDataSource>
 
 -(IBAction)showMenu;
 
