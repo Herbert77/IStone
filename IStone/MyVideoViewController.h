@@ -10,8 +10,11 @@
 
 #import "REFrostedViewController.h"
 
-@interface MyVideoViewController : UIViewController<UITabBarDelegate,UITableViewDataSource>
-
+@interface MyVideoViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+{
+    NSArray                                 *filesname;//文件名字数组
+    NSString                                *path;//文件路径
+}
 -(IBAction)showMenu;
 
 @end

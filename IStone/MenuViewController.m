@@ -331,7 +331,7 @@
                                                                               presetName:_mp4Quality];
         NSDateFormatter* formater = [[NSDateFormatter alloc] init];
         [formater setDateFormat:@"yyyy-MM-dd-HH:mm:ss"];
-        _mp4Path = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/%@.mp4", [formater stringFromDate:[NSDate date]]] ;
+        _mp4Path = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/video%@.mp4", [formater stringFromDate:[NSDate date]]] ;
      
         
         exportSession.outputURL = [NSURL fileURLWithPath: _mp4Path];
@@ -379,17 +379,9 @@
     }
 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    
     
 }
 
