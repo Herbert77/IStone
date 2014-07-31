@@ -187,6 +187,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+<<<<<<< HEAD:Main.storyboard
+=======
+                                <connections>
+                                    <outlet property="dataSource" destination="3rj-DS-wJ0" id="nSp-We-KFl"/>
+                                    <outlet property="delegate" destination="3rj-DS-wJ0" id="EcW-Ra-mnM"/>
+                                </connections>
+>>>>>>> 刘任驰“分支:Main.storyboard
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -198,6 +205,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableview" destination="Lc9-LD-5zg" id="l7D-t0-Jq6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="No7-nj-ahQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

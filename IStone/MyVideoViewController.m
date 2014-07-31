@@ -10,6 +10,7 @@
 #import "MenuViewController.h"
 @interface MyVideoViewController ()
 
+
 @end
 
 @implementation MyVideoViewController
@@ -22,10 +23,16 @@
     }
     return self;
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+<<<<<<< HEAD
 
     
     
@@ -33,6 +40,18 @@
     
     
     
+=======
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSLog(@"documentsDirectory%@",documentsDirectory);
+    NSFileManager *fileManage = [NSFileManager defaultManager];
+    filesname = [fileManage subpathsAtPath: documentsDirectory];
+    NSLog(@"%@",filesname);
+    
+    
+   
+>>>>>>> 刘任驰“分支
     
     
     
@@ -51,11 +70,16 @@
 }
 
 
+<<<<<<< HEAD
 
+=======
+#pragma mark - UItableviewDelegate
+>>>>>>> 刘任驰“分支
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
     
+<<<<<<< HEAD
     return 1;
     
 }
@@ -83,6 +107,38 @@
 }
 
 
+=======
+    return [filesname count]; //返回cell行数
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"MYvideoCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    path = [paths objectAtIndex:0];
+    NSLog(@"path:%@", path);
+    cell.textLabel.text =filesname[indexPath.row];
+    
+    return cell;
+}
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+   MPMoviePlayerViewController* playerView = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:[NSString stringWithFormat:@"file://localhost/private%@/%@",path,filesname[indexPath.row] ]]];
+    NSLog(@"%@",[NSString stringWithFormat:@"file://localhost/private%@/%@",path,filesname[indexPath.row]]);//测试
+    [self presentViewController:playerView animated:YES completion:nil];
+}
+
+#pragma mark -
+>>>>>>> 刘任驰“分支
 
 
 
