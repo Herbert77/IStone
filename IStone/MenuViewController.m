@@ -194,13 +194,15 @@
                 _qualityType = UIImagePickerControllerQualityTypeLow; //视频质量
                 
                 //录制视频
-                UIImagePickerController* pickerView = [[UIImagePickerController alloc] init];
+                pickerView = [[UIImagePickerController alloc] init];
                 pickerView.sourceType = UIImagePickerControllerSourceTypeCamera;
                 NSArray* availableMedia = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
                 pickerView.mediaTypes = [NSArray arrayWithObject:availableMedia[1]];
                 [self presentViewController:pickerView animated:YES completion:nil];
                 pickerView.videoMaximumDuration = 30;
                 pickerView.delegate = self;
+               // [self performSelectorOnMainThread:@selector(screenshot) withObject:nil waitUntilDone:NO];
+               
 
             }
             else if (indexPath.row == 1)
@@ -301,11 +303,11 @@
 //点击usevideo
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+  
     _videoURL = info[UIImagePickerControllerMediaURL];
     NSLog(@"%@",_videoURL);
     
-    
-    
+         
     AVURLAsset *avAsset = [AVURLAsset URLAssetWithURL:_videoURL options:nil];
     NSArray *compatiblePresets = [AVAssetExportSession exportPresetsCompatibleWithAsset:avAsset];
     
@@ -335,7 +337,7 @@
      
         
         exportSession.outputURL = [NSURL fileURLWithPath: _mp4Path];
-        exportSession.shouldOptimizeForNetworkUse = YES;//优化网络以便使用
+        exportSession.shouldOptimizeForNetworkUse = YES;//优化以便网络传输使用
         exportSession.outputFileType = AVFileTypeMPEG4;
         [exportSession exportAsynchronouslyWithCompletionHandler:^{
             switch ([exportSession status]) {
@@ -359,7 +361,7 @@
                     break;
                 case AVAssetExportSessionStatusCompleted:
                     NSLog(@"Successful!");
-                   // [self performSelectorOnMainThread:@selector(convertFinish) withObject:nil waitUntilDone:NO];
+                   // [self performSelectorOnMainThread:@selector(convertFinish) withObject:nil waitUntilDone:NO];//多线程
                     [_alert dismissWithClickedButtonIndex:0 animated:YES];
                     break;
                 default:
@@ -379,6 +381,17 @@
     }
 
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     
@@ -394,7 +407,17 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)screenshot
+{
+    
+    //截屏功能
+    UIGraphicsBeginImageContext(pickerView.view.bounds.size);
+    [pickerView.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image=UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageWriteToSavedPhotosAlbum(image,self,nil, nil);
 
+}
 
 
 

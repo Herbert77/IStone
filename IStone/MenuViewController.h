@@ -24,6 +24,7 @@
     UIAlertView*                                        _alert;
     NSDate*                                             _startDate;
     NSString*                                           _mp4Quality;
+    UIImagePickerController*                            pickerView;//视频录制view
 }
 
 
