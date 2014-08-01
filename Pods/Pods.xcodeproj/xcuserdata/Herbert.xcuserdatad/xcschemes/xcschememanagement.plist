@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-FHSegmentedViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SVPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-XHTwitterPaggingViewer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>036C362B086E42B09696E388</key>
+		<key>00FCF6F7FCB1482DA6CAEA30</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>71F80E1C74424A90B60A4BC4</key>
+		<key>36D5C3CEE727495DBC5F3D75</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>40FA947763DF4B8783CB8F3D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>50F8A27672E749A9B92FF30F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>60E6E2C627AC4A10B87068F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

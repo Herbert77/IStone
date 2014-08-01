@@ -7,7 +7,6 @@
 //
 
 
-// 根控制器
 
 #import <UIKit/UIKit.h>
 
@@ -15,10 +14,20 @@
 
 #import "HMSegmentedControl.h"
 
-@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+#import "FHSegmentedViewController.h"
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+#import "Table_1Controller.h"
+#import "Table_2Controller.h"
+
+//#import "XHTwitterPaggingViewer.h"
+
+@interface HomeViewController : FHSegmentedViewController <UITableViewDelegate, UITableViewDataSource>
+
+//@property (nonatomic, strong) UISegmentedControl *segmentedControl;
 
 -(IBAction)showMenu;
+
+@property (strong, nonatomic) Table_1Controller *table_1Controller;
+@property (strong, nonatomic) Table_2Controller *table_2Controller;
 
 @end

@@ -12,8 +12,10 @@
 
 #import "REFrostedViewController.h"
 
-@interface SameCityViewController : UIViewController
+@interface SameCityViewController : UITableViewController
 
 -(IBAction) showMenu;
+
+//@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 @end

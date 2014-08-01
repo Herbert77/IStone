@@ -19,12 +19,34 @@
 {
     self.contentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
     self.menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuController"];
+    
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+//    NSArray *familyNames =[[NSArray alloc]initWithArray:[UIFont familyNames]];
+//    NSArray *fontNames;
+//    NSInteger indFamily, indFont;
+//    NSLog(@"[familyNames count]===%lu",(unsigned long)[familyNames count]);
+//    for(indFamily=0;indFamily<[familyNames count];++indFamily)
+//        
+//    {
+//        NSLog(@"Family name: %@", [familyNames objectAtIndex:indFamily]);
+//        fontNames =[[NSArray alloc]initWithArray:[UIFont fontNamesForFamilyName:[familyNames objectAtIndex:indFamily]]];
+//        
+//        for(indFont=0; indFont<[fontNames count]; ++indFont)
+//            
+//        {
+//            NSLog(@"Font name: %@",[fontNames objectAtIndex:indFont]);
+//            
+//        }
+//        
+//
+//    }
 }
 
 - (void)didReceiveMemoryWarning

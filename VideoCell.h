@@ -5,6 +5,7 @@
 //  Created by 胡传业 on 14-7-22.
 //  Copyright (c) 2014年 NewThread. All rights reserved.
 //
+// 自定义的用来显示 一个视频的 cell
 
 #import <UIKit/UIKit.h>
 
